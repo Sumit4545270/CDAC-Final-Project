@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: computer-academy
+  labels:
+    app: computer-academy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: computer-academy
+  template:
+    metadata:
+      labels:
+        app: computer-academy
+    spec:
+      containers:
+      - name: computer-academy
+        image: ketanmahajan24/computer-academy-webapp:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        env:
+        - name: PORT
+          value: "3000"
+        - name: MONGO_URL
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-url

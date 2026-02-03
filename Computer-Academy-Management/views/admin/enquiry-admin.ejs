@@ -1,0 +1,48 @@
+
+<%layout("/layouts/dashboard")-%>
+   <!-- Main Content -->
+<div class="content content-box ">
+  
+    
+        <div class="row">
+        <h1 class="col-9">Enquiries </h1>  
+        </div>
+
+     
+    <div class="container student-box">
+        <!-- Student info TABLE  -->
+    <table>
+        <thead>
+            <tr >
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Message</th>
+                <th>Enquiry Date</th>               
+                <th>Delete</th>      
+            </tr>
+        </thead>
+        <tbody>
+                
+
+     <% for (let Visitor of allVisitors){%>
+           <tr>
+                <td><%=Visitor.E_name%></td>
+                <td><%=Visitor.E_mobile%></td>
+                <td><%=Visitor.E_msg%></td>
+                <td><%=Visitor.info_at.toLocaleDateString('en-CA')%></td>
+                <td>
+                    <form method="POST" action="/admin/enquiries/<%=Visitor._id%>?_method=DELETE">
+                        <button class="btn p-0 border-0 bg-transparent"> <i class="fa-solid fa-trash-can"></i></button>
+                    </form>
+                </td>
+                
+                <%}%>
+            </tr>
+        
+
+
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+            </div>
+        </div>

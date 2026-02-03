@@ -1,0 +1,60 @@
+
+<%layout("/layouts/dashboard")-%>
+   <!-- Main Content -->
+<div class="content content-box ">
+  
+     <form method="GET" action="/admin/courses">
+        <div class="row">
+        <h1 class="col-9">Add New Blog </h1>
+        <button class="col-2 btn btn-primary" style="margin: auto;"> <i class="fa-solid fa-chevron-left"></i> Back </button>
+        </div>
+     </form>
+    <div class="container student-box">
+
+        <!--COURSES DETAILS FORMS -->
+
+        <div class=" contact-info" style="padding: 100px;  background-color: #23262b7a;">
+
+          <form method="POST" action="/admin/courses/<%=course._id%>?_method=PUT" class="row g-4 needs-validation">
+              <!-- Blog Image -->
+              <div class="col-md-12">
+              <label for="validationCustom05" class="form-label"> Upload Course image : </label>
+              <input type="text" name="course[C_image]" class="form-control" id="validationCustom05" value="<%=course.C_image%>"required>
+              <div class="invalid-feedback">
+                  Please Create Strong Password.
+              </div>
+              </div>
+            <!-- Blog Title -->
+                <div class="col-md-12">
+                  <label for="validationCustom01" class="form-label">Course Title : </label>
+                  <input  type="text" name="course[C_title]"  class="form-control" id="validationCustom01" value="<%=course.C_title%>" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+            <!-- Blog Description -->
+                <div class="col-md-12">
+                  <label for="validationCustom02" class="form-label">Description : </label>
+                  <textarea rows="6" name="course[C_description]"class="form-control" id="validationCustom02" required><%=course.C_description%></textarea>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+           <!-- Course Duration -->
+           <div class="col-md-12">
+            <label for="validationCustom01" class="form-label">Course Duration : </label>
+            <input  type="text" name="course[duration]"  class="form-control" id="validationCustom01" value="<%=course.duration%>" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+           <div  style="display: flex;">
+                    <button class="col-3 btn btn-primary" style="margin: auto;"><i class="fa-solid fa-plus"></i> Add Course</button>
+
+                </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,151 @@
+
+<%layout("/layouts/dashboard")-%>
+   <!-- Main Content -->
+<div class="content content-box ">
+  
+     <form method="GET" action="/admin/students">
+        <div class="row">
+        <h1 class="col-9">Edit Student Info </h1>  
+        <button class="col-2 btn btn-primary" style="margin: auto;"><i class="fa-solid fa-chevron-left"></i> Back </button>
+        </div>
+     </form>
+    <div class="container student-box">
+
+
+        <!--CONTACT INFO - FORMS   -->
+
+        <div class="contact-info" style=" padding: 100px;  background-color: #23262b7a;;">
+ 
+            <form method="POST" action="/admin/students/<%=student._id%>?_method=PUT"  class="row g-4 needs-validation">
+               
+              
+              <div class="col-md-4">
+                  <label for="validationCustom01" class="form-label">Student Name</label>
+                  <input  type="text" name="student[S_name]"  class="form-control" id="validationCustom01" value="<%=student.S_name%>" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="validationCustom02" class="form-label">Father Name</label>
+                  <input type="text" name="student[F_name]"class="form-control" id="validationCustom02" value="<%=student.F_name%>"  required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+              
+                <div class="col-md-4">
+                  <label for="validationCustom05" class="form-label"> Edit Mobile No.</label>
+                  <input type="number" name="student[Phone]" class="form-control" id="validationCustom05" maxlength="10" value="<%=student.Phone%>"  oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)"  placeholder="Enter 10 Digits Mobile NO."  required>
+                  <div class="invalid-feedback">
+                    Please provide a valid Mobile No.
+                  </div>
+                </div>
+                  
+                <div class="col-md-4">
+                    <label for="validationCustom05" class="form-label"> Edit Adhar Card No. </label>
+                    <input type="number"  pattern="\d{12}" maxlength="12" name="student[Aadhar_no]" class="form-control" id="validationCustom05"  value="<%=student.Aadhar_no%>"  oninput="if(this.value.length > 12) this.value = this.value.slice(0, 12)" placeholder="Enter 12 Digits Aadhar NO." required>
+                    <div class="invalid-feedback">
+                      Please provide a valid Adhar Number.
+                    </div>
+                  </div>
+                  
+                <div class="col-md-4">
+                    <label for="validationCustom05" class="form-label"> Edit Date Of Birth </label>
+                    <input type="date" name="student[Dob]" class="form-control"  id="validationCusto1" value="<%=student.Dob.toLocaleDateString('en-CA')%>" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid DOB.
+                    </div>
+                  </div>
+                
+                                
+
+                  
+                <div class="col-md-4">
+                  <label for="validationCustom05" class="form-label">  Edit Course Name  </label>
+                  <!-- <input type="text" name="student[Course_name]" class="form-control" id="validationCustom05" required> -->
+                  <select name="student[Course_name]" class="form-select" aria-label="Default select example">
+                    <option selected><%=student.Course_name%></option>
+                    <% for (let Course of allCourses){%>
+                     <option value="<%=Course.C_title%>"><%=Course.C_title%></option>
+                     <%}%>
+                   </select>
+                  <div class="invalid-feedback">
+                    Please provide a valid Mobile.
+                  </div>
+                </div>
+
+                  
+                <div class="col-md-4">
+                  <label for="validationCustom05" class="form-label">  Edit Date Of Join</label>
+                  <input type="date" name="student[Join_date]" class="form-control" id="validationCusto2" value="<%=student.Join_date.toLocaleDateString('en-CA')%>" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid DOB.
+                  </div>
+                </div>
+                   
+                <div class="col-md-4">
+                  <label for="validationCustom05" class="form-label">Date Of Course Completation</label>
+                  <input type="date" name="student[complete_date]" class="form-control" id="validationCustom05" value="<%= student.complete_date ? student.complete_date.toLocaleDateString('en-CA') : '' %>">
+                  <div class="invalid-feedback">
+                    Please provide a valid DOB.
+                  </div>
+                </div>
+                
+                <div class="col-md-4">
+                  <label for="validationCustom05" class="form-label"> Grade </label>               
+                    <select name="student[grade]" class="form-control" id="validationCustom05" >
+                      <option value="" selected>Select Grade</option>
+                      <option value="A+" <%= student.grade === 'A+' ? 'selected' : '' %>>A+</option>
+                      <option value="A"  <%= student.grade === 'A' ? 'selected' : '' %>>A</option>
+                      <option value="B+" <%= student.grade === 'B+' ? 'selected' : '' %>>B+</option>
+                      <option value="B"  <%= student.grade === 'B' ? 'selected' : '' %>>B</option>
+                      <option value="C"  <%= student.grade === 'C' ? 'selected' : '' %>>C</option>
+                      <option value="P"  <%= student.grade === 'P' ? 'selected' : '' %>>P</option>
+                      <option value="F"  <%= student.grade === 'F' ? 'selected' : '' %>>F</option>
+                    </select>
+                  
+                  <div class="invalid-feedback">
+                    Please provide a valid Mobile.
+                  </div>
+                </div>
+
+                  
+                      
+              
+                  <div class="col-md-4">
+                    <label for="validationCustom05" class="form-label">Edit Password </label>
+                    <input type="Password" name="student[Password]" class="form-control" id="validationCustom05" maxlength="8"value="<%=student.Password%>" required>
+                    <div class="invalid-feedback">
+                      Please Create Strong Password.
+                    </div>
+                  </div>
+                <div  style="display: flex;">
+                    <button class="col-3 btn btn-primary" style="margin: auto;"><i class="fa-solid fa-pencil"></i> Edit Student </button>
+
+                </div>
+              </form>
+        </div>
+    </div>
+  </div>
+
+
+
+    </div>
+
+
+
+
+
+    <script>
+      // Get today's date
+      const today = new Date().toISOString().split('T')[0]; // Formats the date as YYYY-MM-DD
+      
+      // Set the max attribute of the date input to today's date  --future date not allowed
+      document.getElementById('validationCusto1').setAttribute('max', today);
+    
+      // Set the max attribute of the date input to today's date  --future date not allowed
+      document.getElementById('validationCusto2').setAttribute('max', today);
+    </script>
+        

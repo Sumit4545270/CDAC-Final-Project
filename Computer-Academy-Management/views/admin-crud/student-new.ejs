@@ -1,0 +1,120 @@
+
+<%layout("/layouts/dashboard")-%>
+   <!-- Main Content -->
+<div class="content content-box ">
+  
+     <form method="GET" action="/admin/students">
+        <div class="row">
+        <h1 class="col-9">Add new Student </h1>  
+        <button class="col-2 btn btn-primary" style="margin: auto;"> <i class="fa-solid fa-chevron-left"></i>  Back </button>
+        </div>
+     </form>
+    <div class="container student-box">
+
+
+        <!--CONTACT INFO - FORMS   -->
+
+        <div class="contact-info  " style=" padding: 100px;  background-color: #23262b7a;;">
+ 
+            <form method="POST" action="/admin/students" class="row g-4 needs-validation">
+
+                     
+              <div class="col-md-4">
+                <label for="validationCustom05" class="form-label">Give a Student P.R.N.</label>
+                <input type="text" name="student[S_id]" class="form-control" id="validationCustom05" maxlength="16"   value="ANICA12092024xxx"  required>
+                <div class="invalid-feedback">
+                  Please provide a valid Mobile.
+                </div>
+              </div>
+                <div class="col-md-4">
+                  <label for="validationCustom01" class="form-label">Student Name</label>
+                  <input  type="name" name="student[S_name]"  class="form-control" id="validationCustom01" placeholder="Enter Student Name"required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationCustom02" class="form-label">Father Name</label>
+                  <input type="text" name="student[F_name]"class="form-control" id="validationCustom02"placeholder="Enter Father Name" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                
+                <div class="col-md-4">
+                  <label for="validationCustom05" class="form-label"> Mobile No. </label>
+                  <input type="number"   name="student[Phone]" pattern="[0-9]{10}"  maxlength="10" class="form-control" id="validationCustom05" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)"  placeholder="Enter 10 Digits Mobile NO." required>
+                  <div class="invalid-feedback">
+                    Please provide a valid Mobile No.
+                  </div>
+                </div>
+                  
+                <div class="col-md-4">
+                    <label for="validationCustom05" class="form-label"> Aadhar Card No. </label>
+                    <input type="number" name="student[Aadhar_no]" class="form-control"  maxlength="12"  id="validationCustom05" max="999999999999" oninput="if(this.value.length > 12) this.value = this.value.slice(0, 12)" placeholder="Enter 12 Digits Aadhar NO." required>
+                    <div class="invalid-feedback">
+                      Please provide a valid Adhar Number.
+                    </div>
+                  </div>
+                  
+                <div class="col-md-4">
+                    <label for="validationCustom05" class="form-label"> Date Of Birth </label>
+                    <input type="date" name="student[Dob]"  class="form-control" id="validationCusto1" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid DOB.
+                    </div>
+                  </div>
+                
+                  <div class="col-md-4">
+                    <label for="validationCustom05" class="form-label"> Course Name </label>
+                    <select name="student[Course_name]" class="form-select" aria-label="Default select example">
+                      <option selected>Select Course </option>
+                      <% for (let Course of allCourses){%>
+                      <option  value="<%=Course.C_title%>"><%=Course.C_title%></option>
+                      <%}%>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please provide a valid Mobile.
+                    </div>
+                  </div>
+                     
+                <div class="col-md-4">
+                    <label for="validationCustom05" class="form-label">Date Of Join</label>
+                    <input type="date" name="student[Join_date]" class="form-control" id="validationCusto2" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid DOJ.
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="validationCustom05" class="form-label">Create Strong Password</label>
+                    <input type="password" name="student[Password]" class="form-control" id="validationCustom05" maxlength="8" placeholder="Enter Password" required>
+                    
+                    <div class="invalid-feedback">
+                      Please Create Strong Password.
+                    </div>
+                  </div>
+                <div  style="display: flex;">
+                    <button class="col-3 btn btn-primary" style="margin: auto;"><i class="fa-solid fa-user-plus"></i> Add Student</button>
+
+                </div>
+              </form>
+              
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  // Get today's date
+  const today = new Date().toISOString().split('T')[0]; // Formats the date as YYYY-MM-DD
+  
+  // Set the max attribute of the date input to today's date  --future date not allowed
+  document.getElementById('validationCusto1').setAttribute('max', today);
+
+  // Set the max attribute of the date input to today's date  --future date not allowed
+  document.getElementById('validationCusto2').setAttribute('max', today);
+</script>
+    

@@ -1,0 +1,35 @@
+   <% layout("/layouts/boilerplate") -%>
+<div class="review-page-box" >
+        <!--STUDENT LOGIN- FORMS   -->
+        <div class="contact-info " style="width: 60%; background-color: rgba(0, 255, 234, 0.767); margin: auto;">
+            <h1>Get Your Certificate Now !</h1>
+            <hr>
+            <% if (errorMessage) { %>
+                <h5 style="color: red;"><%= errorMessage %> !</h5>
+            <% } %>
+            <form method="POST" action="/student-certificate"  class="row g-3 needs-validation" validate>
+                <div class="col-md-6">
+                  <label for="validationCustom01" class="form-label"> Student PRN </label>
+                  <input name="S_id" type="text" class="form-control" id="validationCustom01" placeholder="Enter Your 16 Digits PRN " maxlength="16"required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <label for="validationCustom05" class="form-label"> Password </label>
+                    <input name="password" type="password" class="form-control" id="validationCustom05" placeholder="Enter Your Password" maxlength="8" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid Mobile.
+                    </div>
+                  </div>
+                  
+              
+                <div class="col-12" style="display: flex;">
+                  <button class="btn w-30" style="margin: auto;color: azure; background-color: rgb(28, 4, 58);" type="submit">Download Certificate</button>
+
+                </div>
+              </form>
+        </div>
+
+    </div>

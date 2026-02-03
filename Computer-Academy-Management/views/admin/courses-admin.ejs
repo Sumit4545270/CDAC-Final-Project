@@ -1,0 +1,54 @@
+
+<%layout("/layouts/dashboard")-%>
+   <!-- Main Content -->
+<div class="content content-box ">
+  
+     <form method="GET" action="/admin/courses/new">
+        <div class="row">
+        <h1 class="col-9">Courses </h1>  
+        <button class="col-2 btn btn-primary" style="margin: auto;"><i class="fa-regular fa-square-plus"></i> Add New Course</button>
+        </div>
+     </form>
+    <div class="container student-box">
+        <!-- Student info TABLE  -->
+    <table>
+        <thead>
+            <tr >
+                <th>IMAGE</th>
+                <th>TITLE</th>
+                <th>DESCRIPTION</th>
+                <th>Duration</th>               
+                <th>EDIT</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody>
+                
+
+     <% for (let Course of allCourses){%>
+            <tr>
+                <td><img style="height: 10rem;width: 10rem;" src="<%=Course.C_image%>" alt="">
+                   
+                </td>
+                <td><%=Course.C_title%></td>
+                <td><%=Course.C_description%></td>
+                <td><%=Course.duration%></td>
+                
+              
+                <td><a style="color:  #293042;" href="/admin/courses/<%=Course._id%>/edit"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td>
+                    <form method="POST" action="/admin/courses/<%=Course._id%>?_method=DELETE">
+                        <button class="btn p-0 border-0 bg-transparent"><i class="fa-solid fa-trash-can"></i></button>
+                    </form>
+                </td>
+                
+                <%}%>
+            </tr>
+        
+
+
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+            </div>
+        </div>

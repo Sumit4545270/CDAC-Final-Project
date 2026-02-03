@@ -1,0 +1,64 @@
+
+<%layout("/layouts/dashboard")-%>
+   <!-- Main Content -->
+<div class="content content-box ">
+  
+     <form method="GET" action="/admin/students/new">
+        <div class="row">
+        <h1 class="col-9">Enrolled Students</h1>  
+        <button class="col-2 btn btn-primary" style="margin: auto;"><i class="fa-solid fa-user-plus"></i>Add New Student</button>
+    </form>
+        <form action="/students/search" method="post">
+          <div class="row">
+            <div class="col-md-4">
+                <!-- <label for="validationCustom05" class="form-label">Give a Student P.R.N.</label> -->
+                <input name="S_id" type="text" class="form-control" id="validationCustom01" maxlength="16" placeholder="Enter Your 16 Digits PRN "  required>
+                <div class="invalid-feedback">
+                  Please provide a valid Mobile.
+                </div>
+              </div>
+              <button class="col-2 btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        </div>
+          </form>
+          
+       
+        </div>
+     </form>
+    <div class="container student-box">
+        <!-- Student info TABLE  -->
+    <table>
+        <thead>
+            <tr>
+                <th>STUDENT PRN</th>
+                <th>Name</th>
+                <th>Father Name</th>
+                <th>Phone</th>
+                <th>Aadhar No.</th>
+                <th>DOB</th>
+                <th>Course</th>
+                <th>Join Date</th>
+                <th>Complete Date</th>
+                <th>Grade</th>
+                <th>Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+                
+
+            <tr>
+                <td  colspan="8">
+                <% if (errorMessage) { %>
+                    <h5 style="color: red;"><%= errorMessage %> !</h5>
+                <% } %>
+                </td>
+            </tr>
+        
+
+
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+            </div>
+        </div>

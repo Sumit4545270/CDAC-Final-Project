@@ -1,0 +1,66 @@
+
+<%layout("/layouts/dashboard")-%>
+   <!-- Main Content -->
+<div class="content content-box ">
+  
+     <form method="GET" action="/admin/blogs">
+        <div class="row">
+        <h1 class="col-9"> Edit Blog </h1>  
+        <button class="col-2 btn btn-primary" style="margin: auto;"> <i class="fa-solid fa-chevron-left"></i> Back </button>
+        </div>
+     </form>
+    <div class="container student-box">
+
+
+        <!--CONTACT INFO - FORMS   -->
+
+        <div class="contact-info " style=" padding: 100px;  background-color: #23262b7a;;">
+ 
+          <form method="POST" action="/admin/blogs/<%=blog._id%>?_method=PUT">
+
+               <!--Blog Image  -->
+               <div class="col-md-12">
+                <label for="validationCustom05" class="form-label">UPLOAD image : </label>
+                <input type="text" name="blog[B_image]" class="form-control" id="validationCustom05" value="<%=blog.B_image%>"  required>
+                <div class="invalid-feedback">
+                  Please Create Strong Password.
+                </div>
+              </div>
+              
+            <!-- Blog Title -->
+                <div class="col-md-12 " >
+                  <label for="validationCustom01" class="form-label">Blog Title : </label>
+                  <input  type="text" name="blog[B_title]"  class="form-control" id="validationCustom01" value="<%=blog.B_title%>"  required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+            <!-- Blog Description -->
+                <div class="col-md-12">
+                  <label for="validationCustom02" class="form-label">Description : </label>
+                  <textarea rows="6" name="blog[B_description]"class="form-control" id="validationCustom02" required><%=blog.B_description%></textarea>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+          
+            
+            
+               
+              
+                <div  style="display: flex; margin-top: 20px;">
+                  <button class="col-3 btn btn-primary" style="margin: auto;"><i class="fa-solid fa-pencil"></i> Edit Blog </button>
+
+                </div>
+              </form>
+        </div>
+    </div>
+  </div>
+
+
+
+    </div>
+
+
+
+

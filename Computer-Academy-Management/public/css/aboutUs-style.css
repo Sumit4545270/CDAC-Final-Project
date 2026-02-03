@@ -1,0 +1,173 @@
+/* LOGO HEAD START ///////////////////////////////////////////// */
+  .about-page{
+    background-color: #fff;
+    width: 100%;
+  }
+  .about-logo-container {
+    text-align: center;
+    /* justify-content: center; */
+    padding: 0px;
+    margin: 0;
+  }
+  .about-logo {
+    max-width: 70px;
+    height: auto;
+  }
+  .logo-head {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    margin-top: 10px;
+  }
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .about-logo {
+      max-width: 40px;
+    }
+    .logo-head {
+      font-size: 0.7rem;
+    }
+  }
+  @media (max-width: 576px) {
+    .logo-head {
+      font-size: 0.6rem;
+    }
+  }
+/* LOGO HEAD END///////////////////////////////////////////// */
+/* WHY CHOOSE US? SECTION */
+.col-6{
+  padding: 0px!important;
+  margin: 0!important;
+}
+.text-center{
+  margin: 0;
+}
+
+
+.image-container {
+  position: relative;
+  justify-content: center;
+  border-radius: 15px;
+  margin: 10px auto;
+  overflow: hidden;  /* Prevents the image from overflowing its container */
+  /* height: 80vh; */
+  height: 70vh;
+  width: 90%; /* Optional: Set a specific width for your container */
+}
+
+.image-zoom {
+  background-image: url(https://img.freepik.com/free-photo/aerial-view-business-team_53876-124515.jpg?t=st=1730384235~exp=1730387835~hmac=68f303ca64691480fe2e6927d63136aa86d4c5e2e3a7adcb72c7503109fd1190&w=826);
+  background-size: cover;
+  border-radius: 15px;
+  transition: transform 0.6s ease-in-out;  /* Smooth transition for zoom effect */
+  width: 100%; /* Ensures the image is responsive */
+  height: 100%;
+}
+
+.image-container:hover .image-zoom {
+  transform: scale(1.1); /* Scales the image slightly to create zoom effect */
+}
+
+.overlay-image {
+  width: 100%; /* Adjust to your preferred size */
+  height: auto;
+}
+/* heading  */
+
+.overlay-image {
+  width: 100%;
+  height: auto;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white; /* Choose a color that stands out on the image */
+  background-color: rgba(0, 0, 0, 0.5); /* Optional background for readability */
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.centered-heading {
+  font-family: "Open Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  /* font-size: 24px; */
+  margin: 0;
+}
+
+.centered-description {
+  font-family: "Open Sans", serif;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.overlay-image:hover {
+  transform: none; /* Prevent any scaling on hover */
+}
+
+/* Responsive font and padding adjustments /* WHY CHOOSE US? SECTION */ 
+@media (max-width: 768px) {
+  
+  .text-overlay {
+  position: absolute;
+  top: 40%;
+  width: 80%;
+ }
+ 
+.image-container {
+  height: 18rem;  
+}
+.image-zoom {
+  width: 100%; 
+}
+  .centered-heading {
+    font-size: 15px;
+  }
+  .centered-description {
+    font-size: 12px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .text-overlay {
+    position: absolute;
+    top: 40%;
+    width: 80%;
+  }
+  .centered-heading {
+    font-size: 10px;
+  }
+  .centered-description {
+    font-size: 8px;
+  }
+.image-container {
+  height: 12rem;
+  }
+
+.image-zoom {
+   height: 12rem;
+}
+}
+/* WHY CHOOSE US? SECTION  ENDED*/
+
+/* WELCOME TO ANI */
+.about-section{
+  margin: 50px auto;
+  width: 70%;
+}
+.about-section h3{
+
+ font-family: "Open Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+}
+.about-section p{
+  font-family: "Open Sans", serif;
+}

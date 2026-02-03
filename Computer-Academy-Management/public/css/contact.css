@@ -1,0 +1,244 @@
+/* CONTACT US SECTION */
+.contact-page{
+  background-image: url(https://img.freepik.com/premium-photo/laptop-sits-wooden-table-with-glass-wine_1124573-33014.jpg?semt=ais_hybrid);
+  background-size:contain;
+  /* background-color: rgb(75, 75, 75); */
+  
+}
+  .image-container-2{
+    position: relative;
+    justify-content: center;
+    /* border-radius: 15px; */
+    /* margin: 10px ; */
+    overflow: hidden;  /* Prevents the image from overflowing its container */
+    /* height: 80vh; */
+    height: 50vh;
+    width: 100%; /* Optional: Set a specific width for your container */
+  }
+  .image-zoom-4 {
+    background-image: url(https://img.freepik.com/premium-photo/stylish-cover-dark-colors-theme-websites-website-development-logos-posts-more-socia_343960-112437.jpg?semt=ais_hybrid);
+    background-size: cover;
+    /* border-radius: 15px; */
+    transition: transform 0.6s ease-in-out;  /* Smooth transition for zoom effect */
+    width: 100%; /* Ensures the image is responsive */
+    height: 100%;
+  }
+  
+  .image-zoom-2 {
+    background-image: url(https://img.freepik.com/premium-photo/generative-ai-image-clean-workspace-table-with-mug-tasks-lamp-night-office-wallpaper_467541-15915.jpg);
+    background-size: cover;
+    /* border-radius: 15px; */
+    transition: transform 0.6s ease-in-out;  /* Smooth transition for zoom effect */
+    width: 100%; /* Ensures the image is responsive */
+    height: 100%;
+  }
+  
+  .image-container-2:hover .image-zoom-2 {
+    transform: scale(1.1); /* Scales the image slightly to create zoom effect */
+  }
+  
+  
+  .image-container-2:hover .image-zoom-4 {
+    transform: scale(1.1); /* Scales the image slightly to create zoom effect */
+  }
+  
+
+  .overlay-image-2 {
+    width: 100%; /* Adjust to your preferred size */
+    height: auto;
+  }
+  /* heading  */ 
+  .text-overlay-2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Choose a color that stands out on the image */
+    background-color: rgba(0, 0, 0, 0.219); /* Optional background for readability */
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 70%;
+  }
+  
+  .centered-heading-2 {
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    /* font-size: 24px; */
+    margin: 0;
+  }
+  
+  
+  .overlay-image-2:hover {
+    transform: none; /* Prevent any scaling on hover */
+  }
+  
+  .container-inquery{  
+    transform: translateY(-70px);
+  }
+  /* Responsive font and padding adjustments /* WHY CHOOSE US? SECTION */ 
+  @media (max-width: 768px) {
+    
+  .text-overlay-2 {
+    position: absolute;
+    top: 40%;
+    width: 80%;
+   }
+   
+  .image-container-2 {
+    height: 8rem;  
+  }
+  .image-zoom-2 {
+    width: 100%; 
+  }
+    .centered-heading-2 {
+      font-size: 15px;
+    }
+    
+  .container-inquery{  
+    transform: translateY(-30px);
+  }
+    
+  }
+  
+  @media (max-width: 480px) {
+    .text-overlay-2 {
+      position: absolute;
+      top: 40%;
+      width: 80%;
+    }
+    .centered-heading-2 {
+      font-size: 10px;
+    }
+  .image-container-2 {
+    height: 6rem;
+    }
+  
+  .image-zoom-2 {
+     height: 6rem;
+  }
+  
+    
+  .container-inquery{  
+    transform: translateY(-30px);
+  }
+    
+  }
+  
+  /* container-inquery///////////////////////////////////// */
+.container{
+  height: 100%;
+  /* background-color: rgb(238, 255, 0); */
+}
+.contact-info{
+  
+  background-color:rgb(255, 255, 255);
+  height: auto;
+  padding:40px;
+  justify-content: center;
+}
+.social-media {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+.instagram {
+  background-color: #E1306C; /* Instagram color */
+}
+
+.facebook {
+  background-color: #3b5998; /* Facebook color */
+}
+
+.linkedin {
+  background-color: #0077b5; /* LinkedIn color */
+}
+
+.wpp {
+  background-color: #25D366; /* LinkedIn color */
+}
+
+
+.social-icon:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .social-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+  }
+  .email-tag{
+   font-size: 14px; 
+  }
+  
+}
+
+
+
+
+
+
+
+/* FOUNDER CONTACT CONTAINER START*/
+.founder-contact-container{
+  background-color: aliceblue;
+  padding: 20px;
+  font-family: "Open Sans", serif;
+}
+.founder-contact{
+  justify-content: center;
+}
+.founder-contact h1{
+  font-family: "Open Sans", serif;
+  font-weight: 700;
+}
+
+
+
+
+
+
+/* FOUNDER CONTACT CONTAINER ENDED*/
+
+
+
+
+
+
+/* Basic styling for the map container///////////////////////////////// */
+    .location-container h1 {
+      font-family: "Open Sans", serif;
+      font-weight: 800;
+    } 
+    
+    .map-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto;
+  }
+
+  /* Responsive styling for the embedded map */
+  .map-container iframe {
+      width: 100%;
+      /* max-width: 200px; */
+      height:18rem;
+      border-radius: 10px;
+  }
+  

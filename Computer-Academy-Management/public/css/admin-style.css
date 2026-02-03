@@ -1,0 +1,118 @@
+
+* {
+    font-family: "Poppins",  "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    /* background-image: url(); */
+    /* background-color: #fff; */
+}
+
+.vertical-navbar {
+    height: 100vh;
+    width: 220px;
+    background-color: #293042;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+}
+
+.vertical-navbar a {
+    padding: 15px 20px;
+    font-family: "Poppins",  "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.vertical-navbar a i {
+    margin-right: 10px;
+}
+
+.vertical-navbar a:hover, .vertical-navbar a.active {
+    background-color: #575757;
+}
+.content {
+    margin-left: 220px; /* Same as navbar width */
+    padding: 20px;
+    background-color:hsla(0, 0%, 82%, 0.26);
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .vertical-navbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+    }
+    .vertical-navbar a {
+        padding: 10px;
+        text-align: center;
+        font-size: 16px;
+    }
+    .content {
+        /* background-color:rgb(0, 143, 136); */
+        margin-left: 0;
+        /* width: 100vw; */
+        /* height: 100%; */
+    }
+}
+/* //////////////////////////////////ADMIN STUDENT Page /////////////////////// */
+
+.student-box{
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100%;
+    box-shadow: 2px black;
+}
+
+
+/* //////////////////////////////////ADMIN STUDENT Page /////////////////////// */
+
+
+/* table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #062f42;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #ddd;
+}
+
+   /* Hide arrows in Chrome, Safari, Edge, and Opera */
+   #validationCustom05::-webkit-outer-spin-button,
+   #validationCustom05::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+   }
+
+   /* Hide arrows in Firefox */
+   #validationCustom05[type="number"] {
+      -moz-appearance: textfield;
+   }

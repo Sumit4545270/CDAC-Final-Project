@@ -1,0 +1,79 @@
+
+<%layout("/layouts/dashboard")-%>
+   <!-- Main Content -->
+<div class="content content-box ">
+  
+     <form method="GET" action="/admin/students/new">
+        <div class="row">
+        <h1 class="col-9">Enrolled Students</h1>  
+        <button class="col-2 btn btn-primary" style="margin: auto;"><i class="fa-solid fa-user-plus"></i>Add New Student</button>
+    </form>
+        <form action="/students/search" method="post">
+          <div class="row">
+            <div class="col-md-4">
+                <!-- <label for="validationCustom05" class="form-label">Give a Student P.R.N.</label> -->
+                <input name="S_id" type="text" class="form-control" id="validationCustom01" maxlength="16" placeholder="Enter Your 16 Digits PRN "  required>
+                <div class="invalid-feedback">
+                  Please provide a valid Mobile.
+                </div>
+              </div>
+              <button class="col-2 btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        </div>
+          </form>
+          
+       
+        </div>
+     </form>
+    <div class="container student-box">
+        <!-- Student info TABLE  -->
+    <table>
+        <thead>
+            <tr>
+                <th>STUDENT PRN</th>
+                <th>Name</th>
+                <th>Father Name</th>
+                <th>Phone</th>
+                <th>Aadhar No.</th>
+                <th>DOB</th>
+                <th>Course</th>
+                <th>Join Date</th>
+                <th>Complete Date</th>
+                <th>Grade</th>
+                <th>Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+                
+
+            <tr>
+                <td><%=student.S_id%></td>
+                <td><%=student.S_name%></td>
+                <td><%=student.F_name%></td>
+                <td><%=student.Phone%></td>
+                <td><%=student.Aadhar_no%></td>
+                <td><%=student.Dob.toLocaleDateString('en-GB')%></td>      
+                <td><%=student.Course_name%></td>
+                <td><%=student.Join_date.toLocaleDateString('en-GB')%></td>
+                <td><%=student.complete_date ? new Date(student.complete_date).toLocaleDateString('en-GB') : 'Course Not Completed' %></td>
+                <td><%=student.grade%></td>
+                <td><%=student.Password%></td>
+               
+                <td><a style="color:  #293042;" href="/admin/students/<%=student._id%>/edit"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td>
+                    <form method="POST" action="/admin/students/<%=student._id%>?_method=DELETE">
+                        <button class="btn p-0 border-0 bg-transparent"><i class="fa-solid fa-trash-can"></i></button>
+                    </form>
+                </td>
+
+            </tr>
+        
+           
+
+
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+            </div>
+        </div>

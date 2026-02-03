@@ -1,0 +1,87 @@
+/* <----------- COURSES PAGE STARTED -----------> */
+.courses-page{
+      background-image:url(https://c1.wallpaperflare.com/preview/427/745/192/notebook-natural-laptop-macbook.jpg);
+      background-size: contain;
+} 
+/* shape box  */
+.packages{
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 60px;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+}
+/* CARD CONTAINER */
+.corses-box{
+    width: 90%;
+    margin:0px auto;
+    justify-content: center;
+}
+/* CARDS */
+.course-card{
+    width: 18rem;
+    height: 30rem;
+    padding-top: 8px;
+    margin: auto;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-body-head{
+    display: grid;
+    height: 14rem;
+  /* background-color: red; */
+}
+.card-body-blog{
+    display: grid;
+    height: 15rem;
+}
+.card-title{
+    /* height: 3rem; */
+}
+.card-text{
+    /* height: 10rem; */
+    /* overflow-y: scroll;  */
+}
+/* scroll style for card <P> tag */
+.custom-scroll{
+    max-height: 150px; /* Limit the height */
+    overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+.custom-scroll::-webkit-scrollbar {
+    width: 4px; /* Slim width for the scrollbar */
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px;    /* Rounded edges for the scrollbar thumb */
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color when hovered */
+}
+
+.course-card:hover{
+
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow */
+}
+/* CARD IMAGE */
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100%;
+    object-fit:cover !important;
+}
+.enroll-btn{
+    background-color: #ffc107;
+}
+.enroll-btn:hover{
+    background-color:#e0a800;
+    /* transform: scale(1.01); */
+}
+/* /////////////////////////////////////////////////////////////// */

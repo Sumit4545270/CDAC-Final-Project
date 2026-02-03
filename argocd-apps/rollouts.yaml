@@ -1,0 +1,48 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: computer-academy
+  namespace: computer-academy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: computer-academy
+
+  strategy:
+    canary:
+      canaryService: computer-academy-canary
+      stableService: computer-academy-stable
+      steps:
+      - setWeight: 20
+      - setWeight: 100   # auto complete → no pause → no Suspended
+
+  template:
+    metadata:
+      labels:
+        app: computer-academy
+    spec:
+      containers:
+      - name: computer-academy
+        image: ketanmahajan24/computer-academy-webapp:213
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        env:
+        - name: PORT
+          value: "3000"
+        - name: MONGO_URL
+          value: "mongodb://10.0.2.177:27017/computer-academy"
+
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 60

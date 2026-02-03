@@ -1,0 +1,39 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+
+           <!-------------COURSES PAGE STARTED------------->
+<div class="courses-page">
+            <div class="packages">
+               <h5>Get Certified! Complete our course and receive a certificate from an <br><b style="color:#1a1a60 ; font-size: 40px;">ISO 9001:2015 & MSME </b><br> certified institute.</h5>
+               <h3>Explore our Courses </h3>
+            </div>
+            
+   
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 corses-box">
+
+                <!-- COURSE CARDs TAKING VALUES DYNAMICLLY FROM SCHEMA-Course   -->
+                <% for (let Course of allCourses){%>
+        <div class="card course-card">
+            <img src="<%=Course.C_image%>" class="card-img-top" alt="COURSE-im" style="height: 8rem;">
+            <div class="card-body card-body-head">
+                <h6 class="card-title" style="color: black;" ><%=Course.C_title%></h6>
+                <p class="custom-scroll card-text"><%=Course.C_description%></p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Duration: <%=Course.duration%></b></li>
+            </ul>
+            <div class="card-body">
+
+                <!-- Anchor link to Contact page -->
+
+
+                <a href="/contact" type="button" class="enroll-btn btn" >Enroll Now</a>
+            </div>
+        </div>      
+      
+                <%}%>                                                             
+
+        </div>
+      </div>                           
+</body>
+</html>

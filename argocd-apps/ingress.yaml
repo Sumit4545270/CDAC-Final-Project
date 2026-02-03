@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: computer-academy-ingress
+  namespace: computer-academy
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: ""  # Empty host matches all hosts
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: computer-academy-stable
+                port:
+                  number: 80
+  defaultBackend:
+    service:
+      name: computer-academy-service
+      port:
+        number: 80

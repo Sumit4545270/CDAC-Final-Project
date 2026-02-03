@@ -1,0 +1,54 @@
+
+<%layout("/layouts/dashboard")-%>
+
+<div class="content content-box ">
+  
+     <form method="GET" action="/admin/blogs/new">
+        <div class="row">
+        <h1 class="col-9">Uploded Blogs </h1>  
+        <button class="col-2 btn btn-primary" style="margin: auto;"><i class="fa-regular fa-square-plus"></i> Add New Blog</button>
+        </div>
+     </form>
+    <div class="container student-box">
+        <!-- Student info TABLE  -->
+    <table>
+        <thead> 
+            <tr>
+                <th>IMAGE</th>
+                <th>TITLE</th>
+                <th>DESCRIPTION</th>
+                <th>DATE</th>               
+                <th>EDIT</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody>
+                
+
+     <% for (let Blog of allBlogs){%>
+            <tr>
+                <td><img style="height: 10rem;width: 15rem;" src="<%=Blog.B_image%>" alt="">
+                   
+                </td>
+                <td><%=Blog.B_title%></td>
+                <td><%=Blog.B_description%></td>
+                <td><%=Blog.created_at.toLocaleDateString('en-CA')%></td>
+                
+              
+                <td><a style="color:  #293042;" href="/admin/blogs/<%=Blog._id%>/edit"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td>
+                    <form method="POST" action="/admin/blogs/<%=Blog._id%>?_method=DELETE">
+                        <button class="btn p-0 border-0 bg-transparent"><i class="fa-solid fa-trash-can"></i></button>
+                    </form>
+                </td>
+
+                <%}%>
+            </tr>
+        
+
+
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+            </div>
+        </div>
