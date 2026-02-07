@@ -55,7 +55,10 @@ integrating CI/CD, security scanning, monitoring, and GitOps deployment.
 
 ---
 
-
+## 9️⃣ Prometheus & Alertmanager (Slack Alerts)
+<p align="center">
+  <img src="9_vulnerabilities.png" width="900">
+</p>
 
 ---
 
