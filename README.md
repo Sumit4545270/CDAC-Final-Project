@@ -6,6 +6,14 @@ integrating CI/CD, security scanning, monitoring, and GitOps deployment.
 
 ---
 
+## 0️⃣ DevSecOps NetWork
+<p align="center">
+  <img src="VPC.png" width="900">
+</p>
+
+---
+
+
 ## 1️⃣ Infrastructure Setup
 <p align="center">
   <img src="1_Infra.png" width="900">
