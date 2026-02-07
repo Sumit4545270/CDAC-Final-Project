@@ -55,11 +55,6 @@ integrating CI/CD, security scanning, monitoring, and GitOps deployment.
 
 ---
 
-## 8️⃣ Security Vulnerabilities Summary
-
-<p align="center">
-  ![Security Vulnerabilities Summary](9_vulnerabilities.png)
-</p>
 
 
 ---
