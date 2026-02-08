@@ -91,6 +91,12 @@ integrating CI/CD, security scanning, monitoring, and GitOps deployment.
 
 ---
 
+## 1️2️⃣ Billing & Cost Management
+<p align="center">
+  <img src="Billing.png" width="900">
+</p>
+
+---
 ## 📌 Conclusion
 This project implements an end-to-end **DevSecOps pipeline**
 with automated security checks, GitOps-based deployments,
